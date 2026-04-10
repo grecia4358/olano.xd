@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game 3D - Expert Edition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader"></div>
+        <p>Cargando Snake 3D...</p>
+    </div>
+
+    <!-- Main Game Container -->
+    <div id="game-container" class="game-wrapper">
+        <!-- Header -->
+        <header class="game-header">
+            <h1 class="game-title">
+                <span class="title-icon">🐍</span>
+                SNAKE 3D
+                <span class="title-icon">🎮</span>
+            </h1>
+        </header>
+
+        <!-- Stats Panel -->
+        <div class="stats-panel">
+            <div class="stat-card">
+                <div class="stat-icon">🏆</div>
+                <div class="stat-info">
+                    <span class="stat-label">Puntuación</span>
+                    <span class="stat-value" id="score">0</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⭐</div>
+                <div class="stat-info">
+                    <span class="stat-label">Récord</span>
+                    <span class="stat-value" id="high-score">0</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📏</div>
+                <div class="stat-info">
+                    <span class="stat-label">Longitud</span>
+                    <span class="stat-value" id="length">3</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⚡</div>
+                <div class="stat-info">
+                    <span class="stat-label">Nivel</span>
+                    <span class="stat-value" id="level">1</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3D Canvas Container -->
+        <div class="canvas-container">
+            <canvas id="gameCanvas"></canvas>
+            
+            <!-- Controls Overlay -->
+            <div id="controls-overlay" class="controls-overlay">
+                <div class="controls-card">
+                    <h3>🎮 Controles</h3>
+                    <div class="control-item">
+                        <kbd>↑</kbd> <kbd>↓</kbd> <kbd>←</kbd> <kbd>→</kbd>
+                        <span>Mover</span>
+                    </div>
+                    <div class="control-item">
+                        <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd>
+                        <span>Mover (Alt)</span>
+                    </div>
+                    <div class="control-item">
+                        <kbd>Espacio</kbd>
+                        <span>Pausa</span>
+                    </div>
+                    <div class="control-item">
+                        <kbd>R</kbd>
+                        <span>Reiniciar</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game Over Overlay -->
+            <div id="game-over" class="game-over hidden">
+                <div class="game-over-content">
+                    <h2>💀 Game Over</h2>
+                    <div class="final-score">
+                        <p>Puntuación Final: <span id="final-score">0</span></p>
+                        <p>Longitud: <span id="final-length">3</span></p>
+                        <p>Nivel: <span id="final-level">1</span></p>
+                    </div>
+                    <button id="restart-btn" class="restart-btn">🔄 Jugar de Nuevo</button>
+                </div>
+            </div>
+
+            <!-- Pause Overlay -->
+            <div id="pause-overlay" class="pause-overlay hidden">
+                <div class="pause-content">
+                    <h2>⏸️ Pausa</h2>
+                    <p>Presiona Espacio para continuar</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="game-footer">
+            <p>Usa las flechas o WASD para controlar la serpiente</p>
+        </footer>
+    </div>
+
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
